@@ -1,0 +1,8 @@
+Methods,Model,Test_Accuracy_4,Test_Accuracy_25
+Fully_Supervised,ResNet18,0.8231,0.8231
+Semi_Supervised,MixMatch,0.593,0.8692
+Semi_Supervised,FixMatch,0.9269,0.9516
+Semi_Supervised,RemixMatch,0.9051,0.9378
+Self_Supervised,Moco,0.8014,0.8014
+Self_Supervised,SimCLR,0.8203,0.8203
+Self_Supervised,SimSiam,0.814,0.814
