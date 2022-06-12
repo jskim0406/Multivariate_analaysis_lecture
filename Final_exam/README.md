@@ -75,6 +75,12 @@ Self supervised 방법론을 살펴보면, SimCLR 방법론이 가장 높은 성
     - [Supervised learning config - ResNet18]()
 
 
+### Logs and weights
+
+- 아래의 Link를 통해 실험에서 사용한 모델을 다운받을 수 있습니다.
+    - [Google drive](https://drive.google.com/drive/folders/1NfI84WwkwMIfjxJ_yEiig--hEATyyKXt?usp=sharing)
+    
+
 ---
 
 ### Brief reveiw of methods
