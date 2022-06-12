@@ -70,9 +70,9 @@ Self supervised 방법론을 살펴보면, SimCLR 방법론이 가장 높은 성
 
 - 본 실험 조건은 아래의 경로에서 확인 가능합니다
 
-    - [Semi supervised learning config](https://github.com/jskim0406/Multivariate_analaysis_lecture/tree/master/Final_exam/1_SemiSupervised/config)
-    - [Self supervised learning config](https://github.com/jskim0406/Multivariate_analaysis_lecture/tree/master/Final_exam/2_SelfSupervised/configs)
-    - [Supervised learning config - ResNet18](https://github.com/jskim0406/Multivariate_analaysis_lecture/tree/master/Final_exam/3_FullySupervised/configs)
+    - [Semi supervised learning config]()
+    - [Self supervised learning config]()
+    - [Supervised learning config - ResNet18]()
 
 
 ### Logs and weights
@@ -96,11 +96,11 @@ Self supervised 방법론을 살펴보면, SimCLR 방법론이 가장 높은 성
 
     - Consistency Regularization : 데이터, 모델에 변형을 주어 다르게 도출된 예측 값이더라도 같은 이미지에서 도출되었다면 비슷한 값을 갖도록 하는 제약 기법
 
-        <img src="Final_exam/imgs/consistency.png" width="100%">
+        <img src="imgs/consistency.png" width="100%">
 
     - Entropy Minimization : 레이블 간 Confidence의 차이를 최대화해 Entropy를 최소화하는 기법
         
-        <img src="Final_exam/imgs/entropy_min.png" width="100%">
+        <img src="imgs/entropy_min.png" width="100%">
 
     - Mix-Up : 2개의 데이터 샘플 간 선형 보간법을 통해 가중 평균된 새로운 데이터 샘플을 증강해내는 기법
 
@@ -112,7 +112,7 @@ Self supervised 방법론을 살펴보면, SimCLR 방법론이 가장 높은 성
 
     - Distribution Alignment : Unlabel 샘플에 대한 모델의 예측 logti의 평균 분포(distribution)가 true label의 평균 분포(distribution)가 서로 일치(alignment)하도록 유도하는 기법
 
-        <img src="Final_exam/imgs/dist_align.png" width="100%">
+        <img src="imgs/dist_align.png" width="100%">
 
     - Augmentation Anchoring : Strong augmentation 기법을 활용해 consistency regularization 효과를 더욱 강화해 활용하는 방법
         - Weak augmentation이 적용된 데이터의 예측 분포를 strong augmentation이 적용된 데이터의 target으로 활용
@@ -130,7 +130,7 @@ Self supervised 방법론을 살펴보면, SimCLR 방법론이 가장 높은 성
     
 - Positive pair와 negative example 개념을 정의해 대조 학습(contrastive learning)을 수행하는 방법론
 
-    <img src="Final_exam/imgs/moco.png" width="100%">
+    <img src="imgs/moco.png" width="100%">
 
 - 효과적인 대조학습을 수행하기 위해, 아래의 3가지 방법을 제시
     - Memory Queue(First in, First out)
@@ -153,6 +153,6 @@ Self supervised 방법론을 살펴보면, SimCLR 방법론이 가장 높은 성
 - MoCo, SimCLR 같은 대조 학습 방법론 달리 positive pair만 고려해 학습
 - Online network, Target network로 2개의 network 구조를 병렬적으로 구성해 학습 진행
 
-    <img src="Final_exam/imgs/simsiam.png" width="100%">
+    <img src="imgs/simsiam.png" width="100%">
 
 - 일정 학습 주기마다, Online network의 가중치를 그대로 복사해 target network의 가중치를 update
