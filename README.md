@@ -10,7 +10,11 @@
 ```text
 [Question]
 
-X, Y가 모두 있는 오픈데이터를 이용하여 다음을 수행하시오 (이미지, 시그널, 테이블 데이터 어떤 종류여도 상관없습니다). 일부 데이터의 레이블 (Y)을 지우고 semi-supervised learning 기법 최소 3가지, self-supervised learening 기법 최소 3가지, 그리고 supervised learning 방법론을 적용하고 성능을 비교하시오. 더불어 도출된 결과에 대한 본인의 해석을 적으시오.  
+X, Y가 모두 있는 오픈데이터를 이용하여 다음을 수행하시오(이미지, 시그널, 테이블 데이터 어떤 종류여도 상관없습니다).
+일부 데이터의 레이블 (Y)을 지우고 semi-supervised learning 기법 최소 3가지, 
+self-supervised learening 기법 최소 3가지,
+그리고 supervised learning 방법론을 적용하고 성능을 비교하시오. 
+더불어 도출된 결과에 대한 본인의 해석을 적으시오.  
 ```
 
 ---
@@ -64,15 +68,6 @@ Semi supervised 접근의 각 방법론들이 supervised, self-supervised learni
 Semi supervised 방법론의 각론을 살펴보면, FixMatch가 label 샘플 수에 따른 2가지 경우에서 모두 가장 높은 성능을 보였다. 그리고 MixMatch가 가장 낮은 성능을 보였다. Fix, Remix match와 Mix match간 가장 큰 차이점 중 하나로 바로 'strong augmentation'기법의 활용 여부를 고려할 수 있다. strong augmentation 기법의 적용 여부가 semi-supervision 시, 상대적으로 큰 영향을 미침을 유추해볼 수 있다. 더불어,FixMatch가 RemixMatch 대비 모두 높은 성능을 보였다. FixMatch와 RemixMatch 간 미묘하지만 다른 점 중 하나는 Storng augmentation을 적용한 unlabled 데이터의 guessed label 정의 과정이다. Weak augmentation 데이터에 대한 logit distribution에 기반해 guessed label을 정의한다는 것은 공통점으로 볼 수 있다. RemixMatch는 기본적으로 weak augmentation의 logit distribution의 sharpening된 분포를 strong augmentation의 guess labeling에 활용한다. 반면 FixMatch의 'augmentation anchoring'의 과정은 특정 threshold를 넘어서는 confident logit을 one-hot한 값으로 labeling을 진행한다. 이를 통해 FixMatch의 strong augmenataion 샘플의 guessed label은 더욱 높은 confident를 갖는 예측을 대상으로 만 진행되게 됨을 짐작할 수 있다. 이러한 augmentation anchoring에서의 미묘한 차이가 결과적으로 모델의 semi-supervision 학습 성능에 도움이 되었을 것으로 판단된다. 더불어 MixMatch의 경우 소량의 labeled 샘플(4개)을 사용할 경우, 성능이 매우 낮게 나타나는 것을 볼 수 있다. 하지만 labeled 샘플의 수를 조금만 늘려도(25개) 그 성능의 향상이 매우 큰 폭으로 나타남을 알 수 있다. Class 당 비교적 일정량 이상의 labeled 샘플이 존재할 경우, MixMatch 방법론 만으로도 충분히 좋은 성능을 확보할 수 있음을 유추할 수 있다.
 
 Self supervised 방법론을 살펴보면, SimCLR 방법론이 가장 높은 성능을 보였다. Contrastive learning 알고리즘을 활용하는 SimCLR과 MoCo를 비교하면, SimCLR이 더욱 높은 성능을 보였다. SimCLR은 학습을 함에 있어 MoCo 보다 더욱 많은 양의 negative sample을 활용한다. 더불어 이러한 negative sample이 2개의 network를 통해 대조 학습되기 때문에, 이러한 요소가 근소하지만 MoCo보다 높은 성능을 갖게 하는 데 긍정적인 영향을 주었을 것으로 유추할 수 있다. 더불어 SimSiam도 SimCLR보다는 낮지만 좋은 성능을 보였다. SimSiam은 비 대조학습 방법론으로서 학습에 positive sample만 사용한다. negative sample이 없이 positive sample만으로도 좋은 성능을 보인 것은 주목할 만하다. 현재의 실험결과에는 [BYOL(Jean-Bastien Grill, 2020)](https://arxiv.org/abs/2006.07733)은 존재하지 않아, SimSiam 방법론의 성능을 직접적으로 비교해 SimSiam 방법론의 직접적인 이점 및 효과를 확인하기는 어렵다. 그럼에도 불구하고 positive pair만을 토대로 contrastive learning 방법론인 MoCo보다 높은 성능을 보인 것은 매우 주목할만하다.
-
-
-### Experiment condition
-
-- 본 실험 조건은 아래의 경로에서 확인 가능합니다
-
-    - [Semi supervised learning config]()
-    - [Self supervised learning config]()
-    - [Supervised learning config - ResNet18]()
 
 
 ### Logs and weights
